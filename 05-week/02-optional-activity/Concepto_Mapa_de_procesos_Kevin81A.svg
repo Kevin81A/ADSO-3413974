@@ -1,0 +1,84 @@
+<svg width="1100" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradiente fondo -->
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f5f7fa"/>
+      <stop offset="100%" stop-color="#e4ecf7"/>
+    </linearGradient>
+
+    <!-- Sombra -->
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.15"/>
+    </filter>
+
+    <!-- Flecha -->
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#555"/>
+    </marker>
+  </defs>
+
+  <!-- Fondo -->
+  <rect width="100%" height="100%" fill="url(#bgGrad)"/>
+
+  <style>
+    .title { font-family: Arial; font-size: 32px; font-weight: bold; text-anchor: middle; fill: #1a1a1a;}
+    .subtitle { font-family: Arial; font-size: 16px; text-anchor: middle; fill: #444;}
+    .box { rx:20; ry:20; filter:url(#shadow);}
+    .text { font-family: Arial; font-size: 14px; text-anchor: middle; fill: white;}
+    .section { font-size: 17px; font-weight: bold;}
+  </style>
+
+  <!-- Título -->
+  <text x="550" y="50" class="title">MAPA DE PROCESOS</text>
+
+  <!-- Definición -->
+  <rect x="200" y="80" width="700" height="80" fill="#ffffff" class="box"/>
+  <text x="550" y="115" class="subtitle">Representación visual de una organización</text>
+  <text x="550" y="140" class="subtitle">Actividades • Orden • Responsables • Relación</text>
+
+  <!-- TIPOS -->
+  <text x="550" y="190" class="subtitle" font-weight="bold">TIPOS DE PROCESOS</text>
+
+  <!-- Estratégicos -->
+  <rect x="100" y="210" width="300" height="110" fill="#4A90E2" class="box"/>
+  <text x="250" y="245" class="text section">ESTRATÉGICOS</text>
+  <text x="250" y="270" class="text">Dirección</text>
+  <text x="250" y="290" class="text">Planeación</text>
+
+  <!-- Misionales -->
+  <rect x="400" y="210" width="300" height="110" fill="#43A047" class="box"/>
+  <text x="550" y="245" class="text section">MISIONALES</text>
+  <text x="550" y="270" class="text">Producción</text>
+  <text x="550" y="290" class="text">Generan valor</text>
+
+  <!-- Apoyo -->
+  <rect x="700" y="210" width="300" height="110" fill="#F39C12" class="box"/>
+  <text x="850" y="245" class="text section">APOYO</text>
+  <text x="850" y="270" class="text">RRHH • Sistemas</text>
+  <text x="850" y="290" class="text">Soporte</text>
+
+  <!-- Flechas entre tipos -->
+  <line x1="400" y1="265" x2="400" y2="265" stroke="#555"/>
+  <line x1="400" y1="265" x2="400" y2="265"/>
+
+  <!-- Flujo -->
+  <text x="550" y="360" class="subtitle">FLUJO DEL PROCESO</text>
+  <rect x="200" y="380" width="700" height="90" fill="#66BB6A" class="box"/>
+  <text x="550" y="430" class="text">Proveedor → Entrada → Proceso → Salida → Cliente</text>
+
+  <!-- Flecha hacia abajo -->
+  <line x1="550" y1="320" x2="550" y2="380" stroke="#555" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Elementos -->
+  <text x="550" y="510" class="subtitle">ELEMENTOS</text>
+  <rect x="250" y="530" width="600" height="100" fill="#5DADE2" class="box"/>
+  <text x="550" y="565" class="text">Entradas • Actividades • Salidas</text>
+  <text x="550" y="590" class="text">Responsable • Indicadores</text>
+
+  <!-- Para qué sirve -->
+  <text x="550" y="660" class="subtitle">¿PARA QUÉ SIRVE?</text>
+  <rect x="200" y="680" width="700" height="100" fill="#AF7AC5" class="box"/>
+  <text x="550" y="715" class="text">Mejorar • Entender • Optimizar</text>
+  <text x="550" y="740" class="text">Detectar fallas • Estandarizar</text>
+
+</svg>
