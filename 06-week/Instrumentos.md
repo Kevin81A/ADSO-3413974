@@ -1,8 +1,7 @@
 ```mermaid
 mindmap
-  root((Tema principal))
-    Idea 1
-    Idea 2
+  root((Instrimentos de recoleccíon de datos))
+
 
     Tipos
       Encuestas
