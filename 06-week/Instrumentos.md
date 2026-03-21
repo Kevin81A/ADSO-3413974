@@ -1,9 +1,8 @@
+```mermaid
 mindmap
-  root((📊 Instrumentos de Recolección de Información))
-    Definición
-      Herramientas para obtener datos
-      Responden preguntas de investigación
-      Permiten comprobar hipótesis
+  root((Tema principal))
+    Idea 1
+    Idea 2
 
     Tipos
       Encuestas
@@ -79,3 +78,4 @@ mindmap
       Datos confiables
       Base para conclusiones
       Investigación válida
+```
