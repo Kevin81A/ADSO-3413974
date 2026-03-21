@@ -1,80 +1,55 @@
 ```mermaid
-mindmap
-  root((Instrimentos de recoleccíon de datos))
+flowchart TD
+    A[📊 Instrumentos de Recolección] --> B[Definición]
+    A --> C[Tipos]
+    A --> D[Características]
+    A --> E[Elección]
+    A --> F[Importancia]
 
+    B --> B1[Obtener datos]
+    B --> B2[Responder preguntas]
+    B --> B3[Comprobar hipótesis]
 
-    Tipos
-      Encuestas
-        Cuestionarios estructurados
-        Ventajas
-          Rápidas
-          Económicas
-          Fáciles de analizar
-        Desventajas
-          Respuestas superficiales
+    C --> C1[📋 Encuestas]
+    C --> C2[🎤 Entrevistas]
+    C --> C3[👀 Observación]
+    C --> C4[👥 Grupos focales]
+    C --> C5[📚 Análisis documental]
 
-      Entrevistas
-        Conversaciones dirigidas
-        Tipos
-          Estructurada
-          Semiestructurada
-          Abierta
-        Ventajas
-          Información profunda
-        Desventajas
-          Toma tiempo
-          Puede haber sesgo
+    C1 --> C1A[✔ Rápidas]
+    C1 --> C1B[✔ Económicas]
+    C1 --> C1C[❌ Superficiales]
 
-      Observación
-        Registro de comportamientos
-        Tipos
-          Participante
-          No participante
-        Ventajas
-          Datos reales
-        Desventajas
-          Subjetividad
+    C2 --> C2A[✔ Profundas]
+    C2 --> C2B[❌ Toman tiempo]
 
-      Grupos Focales
-        Discusión en grupo
-        Ventajas
-          Ideas diversas
-        Desventajas
-          Influencia entre participantes
+    C3 --> C3A[✔ Datos reales]
+    C3 --> C3B[❌ Subjetiva]
 
-      Análisis Documental
-        Revisión de documentos
-        Ejemplos
-          Libros
-          Informes
-          Artículos
-        Ventajas
-          Económico
-        Desventajas
-          Puede estar desactualizado
+    C4 --> C4A[✔ Ideas diversas]
+    C4 --> C4B[❌ Influencia grupal]
 
-    Características
-      Válido
-      Confiable
-      Objetivo
-      Claro
+    C5 --> C5A[✔ Económico]
+    C5 --> C5B[❌ Puede estar desactualizado]
 
-    Elección
-      Tipo de investigación
-      Objetivo
-      Recursos
-      Tipo de datos
+    D --> D1[✔ Válido]
+    D --> D2[✔ Confiable]
+    D --> D3[✔ Objetivo]
+    D --> D4[✔ Claro]
 
-    Ejemplo
-      Encuesta
-        Medir satisfacción
-      Entrevista
-        Entender razones
-      Observación
-        Ver comportamiento
+    E --> E1[Tipo de investigación]
+    E --> E2[Objetivo]
+    E --> E3[Recursos]
+    E --> E4[Tipo de datos]
 
-    Importancia
-      Datos confiables
-      Base para conclusiones
-      Investigación válida
+    F --> F1[Datos confiables]
+    F --> F2[Base de conclusiones]
+    F --> F3[Investigación válida]
+
+    %% Estilos
+    style A fill:#4CAF50,stroke:#333,color:#fff
+    style C fill:#2196F3,stroke:#333,color:#fff
+    style D fill:#FF9800,stroke:#333,color:#fff
+    style E fill:#9C27B0,stroke:#333,color:#fff
+    style F fill:#009688,stroke:#333,color:#fff
 ```
