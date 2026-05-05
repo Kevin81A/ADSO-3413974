@@ -1,4 +1,4 @@
-# 📄 ¿Qué es SRC en requisitos de software?
+# 📄 ¿Qué es SRS en requisitos de software?
 
 ## 📌 Definición
 
@@ -19,7 +19,7 @@ El SRC se utiliza para:
 
 ---
 
-## 📂 Contenido de un SRC
+## 📂 Contenido de un SRS
 
 ### 1. 📖 Introducción
 
