@@ -15,4 +15,5 @@
 - **Week 8:** Instrumentos de recolección con nuestro proyecto
   **asimilar  a nuestro proyeto 
 - **Week 9:** Actividad supermercado
-- la q mando el profe
+- **Week 10: Actividad SRS Supermercado
+- **Hacer una sintaxis y infografia de apoyo para rxponer en 3 minutos
