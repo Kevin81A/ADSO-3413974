@@ -15,5 +15,7 @@
 - **Week 8:** Instrumentos de recolección con nuestro proyecto
   **asimilar  a nuestro proyeto 
 - **Week 9:** Actividad supermercado
+- **Week 10: Cronograma
+- encargados; Kevin Eduardo y brenda galeano
 - **Week 10: Actividad SRS Supermercado
 - **Hacer una sintaxis y infografia de apoyo para rxponer en 3 minutos
