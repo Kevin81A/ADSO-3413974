@@ -19,3 +19,7 @@
 - encargados; Kevin Eduardo y brenda galeano
 - **Week 11:** Actividad SRS Supermercado
 - **Hacer una sintaxis y infografia de apoyo para rxponer en 3 minutos
+- **Week 12:** Que son las TIC
+- **Vimos temas y diapositivas de compañeros
+- **Weel 13:** Gestion Horario Instructores
+- **powerpoint 5, documento word y mockup
