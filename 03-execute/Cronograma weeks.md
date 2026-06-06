@@ -21,5 +21,7 @@
 - **Hacer una sintaxis y infografia de apoyo para rxponer en 3 minutos
 - **Week 12:** Que son las TIC
 - **Vimos temas y diapositivas de compañeros
-- **Weel 13:** Gestion Horario Instructores
+- **WeeK 13:** Gestion Horario Instructores
 - **powerpoint 5, documento word y mockup
+- **WeeK 14:** Implementar documentos de gestion de horarios, adaptarlos a nuestro proyecto
+-  **WeeK 15:** Trabajo Diagramas UML, .drawie y word
