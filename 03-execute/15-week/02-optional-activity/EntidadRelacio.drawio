@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+  <root>
+    <mxCell id="0" />
+    <mxCell id="1" parent="0" />
+
+    <!-- ProgramaFormacion -->
+    <mxCell id="2" value="ProgramaFormacion" style="swimlane;fontStyle=1;align=center;startSize=26;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+      <mxGeometry x="30" y="30" width="180" height="120" as="geometry" />
+    </mxCell>
+    <mxCell id="3" value="PK id : Long" style="text;strokeColor=none;fillColor=none;align=left;spacingLeft=4;" vertex="1" parent="2">
+      <mxGeometry x="0" y="26" width="180" height="20" as="geometry" />
+    </mxCell>
+    <mxCell id="4" value="codigo : String" style="text;strokeColor=none;fillColor=none;align=left;spacingLeft=4;" vertex="1" parent="2">
+      <mxGeometry x="0" y="46" width="180" height="20" as="geometry" />
+    </mxCell>
+    <mxCell id="5" value="nombre : String" style="text;strokeColor=none;fillColor=none;align=left;spacingLeft=4;" vertex="1" parent="2">
+      <mxGeometry x="0" y="66" width="180" height="20" as="geometry" />
+    </mxCell>
+    <mxCell id="6" value="agregarFicha()" style="text;strokeColor=none;fillColor=#fff2cc;align=left;spacingLeft=4;" vertex="1" parent="2">
+      <mxGeometry x="0" y="90" width="180" height="26" as="geometry" />
+    </mxCell>
+
+    <!-- Ficha -->
+    <mxCell id="10" value="Ficha" style="swimlane;fontStyle=1;align=center;startSize=26;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+      <mxGeometry x="310" y="30" width="200" height="160" as="geometry" />
+    </mxCell>
+    <mxCell id="11" value="PK id : Long" style="text;strokeColor=none;fillColor=none;align=left;spacingLeft=4;" vertex="1" parent="10">
+      <mxGeometry x="0" y="26" width="200" height="20" as="geometry" />
+    </mxCell>
+    <mxCell id="12" value="codigo : String" style="text;strokeColor=none;fillColor=none;align=left;spacingLeft=4;" vertex="1" parent="10">
+      <mxGeometry x="0" y="46" width="200" height="20" as="geometry" />
+    </mxCell>
+    <mxCell id="13" value="numAprendices : Integer" style="text;strokeColor=none;fillColor=none;align=left;spacingLeft=4;" vertex="1" parent="10">
+      <mxGeometry x="0" y="66" width="200" height="20" as="geometry" />
+    </mxCell>
+    <mxCell id="14" value="estado : String" style="text;strokeColor=none;fillColor=none;align=left;spacingLeft=4;" vertex="1" parent="10">
+      <mxGeometry x="0" y="86" width="200" height="20" as="geometry" />
+    </mxCell>
+    <mxCell id="15" value="FK programaId : Long" style="text;strokeColor=none;fillColor=none;align=left;spacingLeft=4;" vertex="1" parent="10">
+      <mxGeometry x="0" y="106" width="200" height="20" as="geometry" />
+    </mxCell>
+    <mxCell id="16" value="actualizarEstado()" style="text;strokeColor=none;fillColor=#fff2cc;align=left;spacingLeft=4;" vertex="1" parent="10">
+      <mxGeometry x="0" y="130" width="200" height="26" as="geometry" />
+    </mxCell>
+
+    <!-- Horario -->
+    <mxCell id="20" value="Horario" style="swimlane;fontStyle=1;align=center;startSize=26;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+      <mxGeometry x="290" y="260" width="210" height="220" as="geometry" />
+    </mxCell>
+    <mxCell id="21" value="PK id : Long" style="text;strokeColor=none;fillColor=none;align=left;spacingLeft=4;" vertex="1" parent="20">
+      <mxGeometry x="0" y="26" width="210" height="20" as="geometry" />
+    </mxCell>
+    <mxCell id="22" value="fecha : Date" style="text;strokeColor=none;fillColor=none;align=left;spacingLeft=4;" vertex="1" parent="20">
+      <mxGeometry x="0" y="46" width="210" height="20" as="geometry" />
+    </mxCell>
+    <mxCell id="23" value="horaInicio : Time" style="text;strokeColor=none;fillColor=none;align=left;spacingLeft=4;" vertex="1" parent="20">
+      <mxGeometry x="0" y="66" width="210" height="20" as="geometry" />
+    </mxCell>
+    <mxCell id="24" value="horaFin : Time" style="text;strokeColor=none;fillColor=none;align=left;spacingLeft=4;" vertex="1" parent="20">
+      <mxGeometry x="0" y="86" width="210" height="20" as="geometry" />
+    </mxCell>
+    <mxCell id="25" value="estado : String" style="text;strokeColor=none;fillColor=none;align=left;spacingLeft=4;" vertex="1" parent="20">
+      <mxGeometry x="0" y="106" width="210" height="20" as="geometry" />
+    </mxCell>
+    <mxCell id="26" value="FK fichaId : Long" style="text;strokeColor=none;fillColor=none;align=left;spacingLeft=4;" vertex="1" parent="20">
+      <mxGeometry x="0" y="126" width="210" height="20" as="geometry" />
+    </mxCell>
+    <mxCell id="27" value="FK instructorId : Long" style="text;strokeColor=none;fillColor=none;align=left;spacingLeft=4;" vertex="1" parent="20">
+      <mxGeometry x="0" y="146" width="210" height="20" as="geometry" />
+    </mxCell>
+    <mxCell id="28" value="FK ambienteId : Long" style="text;strokeColor=none;fillColor=none;align=left;spacingLeft=4;" vertex="1" parent="20">
+      <mxGeometry x="0" y="166" width="210" height="20" as="geometry" />
+    </mxCell>
+    <mxCell id="29" value="validarConflicto()" style="text;strokeColor=none;fillColor=#fff2cc;align=left;spacingLeft=4;" vertex="1" parent="20">
+      <mxGeometry x="0" y="186" width="210" height="17" as="geometry" />
+    </mxCell>
+    <mxCell id="30" value="cambiarEstado()" style="text;strokeColor=none;fillColor=#fff2cc;align=left;spacingLeft=4;" vertex="1" parent="20">
+      <mxGeometry x="0" y="203" width="210" height="17" as="geometry" />
+    </mxCell>
+
+    <!-- Instructor -->
+    <mxCell id="40" value="Instructor" style="swimlane;fontStyle=1;align=center;startSize=26;fillColor=#ffe6cc;strokeColor=#d6b656;" vertex="1" parent="1">
+      <mxGeometry x="610" y="260" width="220" height="180" as="geometry" />
+    </mxCell>
+    <mxCell id="41" value="PK id : Long" style="text;strokeColor=none;fillColor=none;align=left;spacingLeft=4;" vertex="1" parent="40">
+      <mxGeometry x="0" y="26" width="220" height="20" as="geometry" />
+    </mxCell>
+    <mxCell id="42" value="documento : String" style="text;strokeColor=none;fillColor=none;align=left;spacingLeft=4;" vertex="1" parent="40">
+      <mxGeometry x="0" y="46" width="220" height="20" as="geometry" />
+    </mxCell>
+    <mxCell id="43" value="nombre : String" style="text;strokeColor=none;fillColor=none;align=left;spacingLeft=4;" vertex="1" parent="40">
+      <mxGeometry x="0" y="66" width="220" height="20" as="geometry" />
+    </mxCell>
+    <mxCell id="44" value="tipoContrato : String" style="text;strokeColor=none;fillColor=none;align=left;spacingLeft=4;" vertex="1" parent="40">
+      <mxGeometry x="0" y="86" width="220" height="20" as="geometry" />
+    </mxCell>
+    <mxCell id="45" value="consultarDisponibilidad()" style="text;strokeColor=none;fillColor=#fff2cc;align=left;spacingLeft=4;" vertex="1" parent="40">
+      <mxGeometry x="0" y="110" width="220" height="20" as="geometry" />
+    </mxCell>
+    <mxCell id="46" value="actualizarDisponibilidad()" style="text;strokeColor=none;fillColor=#fff2cc;align=left;spacingLeft=4;" vertex="1" parent="40">
+      <mxGeometry x="0" y="130" width="220" height="20" as="geometry" />
+    </mxCell>
+
+    <!-- Disponibilidad -->
+    <mxCell id="50" value="Disponibilidad" style="swimlane;fontStyle=1;align=center;startSize=26;fillColor=#ffe6cc;strokeColor=#d6b656;" vertex="1" parent="1">
+      <mxGeometry x="610" y="510" width="220" height="160" as="geometry" />
+    </mxCell>
+    <mxCell id="51" value="PK id : Long" style="text;strokeColor=none;fillColor=none;align=left;spacingLeft=4;" vertex="1" parent="50">
+      <mxGeometry x="0" y="26" width="220" height="20" as="geometry" />
+    </mxCell>
+    <mxCell id="52" value="dia : String" style="text;strokeColor=none;fillColor=none;align=left;spacingLeft=4;" vertex="1" parent="50">
+      <mxGeometry x="0" y="46" width="220" height="20" as="geometry" />
+    </mxCell>
+    <mxCell id="53" value="horaInicio : Time" style="text;strokeColor=none;fillColor=none;align=left;spacingLeft=4;" vertex="1" parent="50">
+      <mxGeometry x="0" y="66" width="220" height="20" as="geometry" />
+    </mxCell>
+    <mxCell id="54" value="horaFin : Time" style="text;strokeColor=none;fillColor=none;align=left;spacingLeft=4;" vertex="1" parent="50">
+      <mxGeometry x="0" y="86" width="220" height="20" as="geometry" />
+    </mxCell>
+    <mxCell id="55" value="FK instructorId : Long" style="text;strokeColor=none;fillColor=none;align=left;spacingLeft=4;" vertex="1" parent="50">
+      <mxGeometry x="0" y="106" width="220" height="20" as="geometry" />
+    </mxCell>
+    <mxCell id="56" value="verificarDisponibilidad()" style="text;strokeColor=none;fillColor=#fff2cc;align=left;spacingLeft=4;" vertex="1" parent="50">
+      <mxGeometry x="0" y="130" width="220" height="26" as="geometry" />
+    </mxCell>
+
+    <!-- AmbienteFormacion -->
+    <mxCell id="60" value="AmbienteFormacion" style="swimlane;fontStyle=1;align=center;startSize=26;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+      <mxGeometry x="30" y="390" width="200" height="160" as="geometry" />
+    </mxCell>
+    <mxCell id="61" value="PK id : Long" style="text;strokeColor=none;fillColor=none;align=left;spacingLeft=4;" vertex="1" parent="60">
+      <mxGeometry x="0" y="26" width="200" height="20" as="geometry" />
+    </mxCell>
+    <mxCell id="62" value="codigo : String" style="text;strokeColor=none;fillColor=none;align=left;spacingLeft=4;" vertex="1" parent="60">
+      <mxGeometry x="0" y="46" width="200" height="20" as="geometry" />
+    </mxCell>
+    <mxCell id="63" value="capacidad : Integer" style="text;strokeColor=none;fillColor=none;align=left;spacingLeft=4;" vertex="1" parent="60">
+      <mxGeometry x="0" y="66" width="200" height="20" as="geometry" />
+    </mxCell>
+    <mxCell id="64" value="estado : String" style="text;strokeColor=none;fillColor=none;align=left;spacingLeft=4;" vertex="1" parent="60">
+      <mxGeometry x="0" y="86" width="200" height="20" as="geometry" />
+    </mxCell>
+    <mxCell id="65" value="validarCapacidad()" style="text;strokeColor=none;fillColor=#fff2cc;align=left;spacingLeft=4;" vertex="1" parent="60">
+      <mxGeometry x="0" y="110" width="200" height="20" as="geometry" />
+    </mxCell>
+    <mxCell id="66" value="cambiarEstado()" style="text;strokeColor=none;fillColor=#fff2cc;align=left;spacingLeft=4;" vertex="1" parent="60">
+      <mxGeometry x="0" y="130" width="200" height="26" as="geometry" />
+    </mxCell>
+
+    <!-- Observacion -->
+    <mxCell id="70" value="Observacion" style="swimlane;fontStyle=1;align=center;startSize=26;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+      <mxGeometry x="290" y="560" width="210" height="140" as="geometry" />
+    </mxCell>
+    <mxCell id="71" value="PK id : Long" style="text;strokeColor=none;fillColor=none;align=left;spacingLeft=4;" vertex="1" parent="70">
+      <mxGeometry x="0" y="26" width="210" height="20" as="geometry" />
+    </mxCell>
+    <mxCell id="72" value="descripcion : String" style="text;strokeColor=none;fillColor=none;align=left;spacingLeft=4;" vertex="1" parent="70">
+      <mxGeometry x="0" y="46" width="210" height="20" as="geometry" />
+    </mxCell>
+    <mxCell id="73" value="fechaRegistro : Date" style="text;strokeColor=none;fillColor=none;align=left;spacingLeft=4;" vertex="1" parent="70">
+      <mxGeometry x="0" y="66" width="210" height="20" as="geometry" />
+    </mxCell>
+    <mxCell id="74" value="FK horarioId : Long" style="text;strokeColor=none;fillColor=none;align=left;spacingLeft=4;" vertex="1" parent="70">
+      <mxGeometry x="0" y="86" width="210" height="20" as="geometry" />
+    </mxCell>
+    <mxCell id="75" value="registrarObservacion()" style="text;strokeColor=none;fillColor=#fff2cc;align=left;spacingLeft=4;" vertex="1" parent="70">
+      <mxGeometry x="0" y="110" width="210" height="26" as="geometry" />
+    </mxCell>
+
+    <!-- Relacion: ProgramaFormacion 1 -- N Ficha -->
+    <mxCell id="80" value="" style="endArrow=ERmany;startArrow=ERone;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="2" target="10">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- Relacion: Ficha 1 -- N Horario -->
+    <mxCell id="81" value="" style="endArrow=ERmany;startArrow=ERone;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="10" target="20">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- Relacion: Horario N -- 1 Instructor -->
+    <mxCell id="82" value="" style="endArrow=ERone;startArrow=ERmany;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="20" target="40">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- Relacion: Instructor 1 -- N Disponibilidad -->
+    <mxCell id="83" value="" style="endArrow=ERmany;startArrow=ERone;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="40" target="50">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- Relacion: AmbienteFormacion 1 -- N Horario -->
+    <mxCell id="84" value="" style="endArrow=ERmany;startArrow=ERone;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="60" target="20">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- Relacion: Horario 1 -- N Observacion -->
+    <mxCell id="85" value="" style="endArrow=ERmany;startArrow=ERone;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="20" target="70">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+  </root>
+</mxGraphModel>

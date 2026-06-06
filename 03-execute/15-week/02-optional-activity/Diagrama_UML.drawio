@@ -1,0 +1,135 @@
+<mxfile host="app.diagrams.net">
+  <diagram id="2CYu6raTtthtG6bNB0lz" name="Página-1">
+    <mxGraphModel dx="1278" dy="705" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="10" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;fontSize=14;fontStyle=1;arcSize=8;" value="Sistema schedule-sena" vertex="1">
+          <mxGeometry height="50" width="240" x="465" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="20" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=14;fontStyle=1;arcSize=8;" value="Diagramas estáticos" vertex="1">
+          <mxGeometry height="50" width="280" x="105" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="30" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=14;fontStyle=1;arcSize=8;" value="Diagramas dinámicos" vertex="1">
+          <mxGeometry height="50" width="280" x="785" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="40" edge="1" parent="1" source="10" style="edgeStyle=orthogonalEdgeStyle;" target="20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="21" parent="1" style="text;html=1;align=center;fontSize=11;fontColor=#555555;" value="¿Cómo está organizado el sistema?" vertex="1">
+          <mxGeometry height="20" width="280" x="105" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="41" edge="1" parent="1" source="10" style="edgeStyle=orthogonalEdgeStyle;" target="30">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="50" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;arcSize=8;" value="&lt;b&gt;Diagrama de clases&lt;/b&gt;&lt;br&gt;Ambiente, Instructor,&lt;br&gt;Ficha, Horario" vertex="1">
+          <mxGeometry height="70" width="160" x="75" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="51" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;arcSize=8;" value="&lt;b&gt;Diagrama de componentes&lt;/b&gt;&lt;br&gt;Módulos del sistema&lt;br&gt;e interfaces" vertex="1">
+          <mxGeometry height="70" width="160" x="255" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="52" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;arcSize=8;" value="&lt;b&gt;Diagrama de despliegue&lt;/b&gt;&lt;br&gt;Distribución en&lt;br&gt;nodos físicos/virtuales" vertex="1">
+          <mxGeometry height="70" width="160" x="75" y="490" as="geometry" />
+        </mxCell>
+        <mxCell id="53" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;arcSize=8;" value="&lt;b&gt;Diagrama de paquetes&lt;/b&gt;&lt;br&gt;Agrupación lógica&lt;br&gt;de módulos" vertex="1">
+          <mxGeometry height="70" width="160" x="255" y="490" as="geometry" />
+        </mxCell>
+        <mxCell id="60" edge="1" parent="1" source="20" style="edgeStyle=orthogonalEdgeStyle;" target="50">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="61" edge="1" parent="1" source="20" style="edgeStyle=orthogonalEdgeStyle;" target="51">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="62" edge="1" parent="1" source="20" style="edgeStyle=orthogonalEdgeStyle;" target="52">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="245" y="420" />
+              <mxPoint x="155" y="420" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="63" edge="1" parent="1" source="20" style="edgeStyle=orthogonalEdgeStyle;" target="53">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="245" y="420" />
+              <mxPoint x="335" y="420" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="70" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;arcSize=8;" value="&lt;b&gt;Diagrama de casos de uso&lt;/b&gt;&lt;br&gt;Actores y funcionalidades&lt;br&gt;del sistema" vertex="1">
+          <mxGeometry height="70" width="170" x="745" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="71" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;arcSize=8;" value="&lt;b&gt;Diagrama de actividad&lt;/b&gt;&lt;br&gt;Flujo de trabajo&lt;br&gt;paso a paso" vertex="1">
+          <mxGeometry height="70" width="160" x="935" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="72" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;arcSize=8;" value="&lt;b&gt;Diagrama de secuencia&lt;/b&gt;&lt;br&gt;Mensajes entre objetos&lt;br&gt;en un escenario" vertex="1">
+          <mxGeometry height="70" width="170" x="760" y="490" as="geometry" />
+        </mxCell>
+        <mxCell id="73" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;arcSize=8;" value="&lt;b&gt;Diagrama de estados&lt;/b&gt;&lt;br&gt;Ciclo de vida&lt;br&gt;de un objeto" vertex="1">
+          <mxGeometry height="70" width="160" x="935" y="490" as="geometry" />
+        </mxCell>
+        <mxCell id="80" edge="1" parent="1" source="30" style="edgeStyle=orthogonalEdgeStyle;" target="70">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="81" edge="1" parent="1" source="30" style="edgeStyle=orthogonalEdgeStyle;" target="71">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="82" edge="1" parent="1" source="30" style="edgeStyle=orthogonalEdgeStyle;" target="72">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="925" y="420" />
+              <mxPoint x="845" y="420" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="83" edge="1" parent="1" source="30" style="edgeStyle=orthogonalEdgeStyle;" target="73">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="925" y="420" />
+              <mxPoint x="1015" y="420" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="90" parent="1" style="text;html=1;align=center;fontSize=12;fontStyle=1;fontColor=#333333;" value="Actores identificados" vertex="1">
+          <mxGeometry height="25" width="200" x="485" y="600" as="geometry" />
+        </mxCell>
+        <mxCell id="91" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=11;" value="Coordinador académico" vertex="1">
+          <mxGeometry height="50" width="160" x="240" y="650" as="geometry" />
+        </mxCell>
+        <mxCell id="92" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=11;" value="Instructor" vertex="1">
+          <mxGeometry height="50" width="130" x="430" y="650" as="geometry" />
+        </mxCell>
+        <mxCell id="93" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=11;" value="Aprendiz" vertex="1">
+          <mxGeometry height="50" width="130" x="590" y="650" as="geometry" />
+        </mxCell>
+        <mxCell id="94" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=11;" value="Administrador del sistema" vertex="1">
+          <mxGeometry height="50" width="180" x="750" y="650" as="geometry" />
+        </mxCell>
+        <mxCell id="100" parent="1" style="text;html=1;align=center;fontSize=12;fontStyle=1;fontColor=#333333;" value="Entidades del dominio" vertex="1">
+          <mxGeometry height="25" width="660" x="255" y="720" as="geometry" />
+        </mxCell>
+        <mxCell id="101" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" value="Ambiente" vertex="1">
+          <mxGeometry height="40" width="110" x="195" y="755" as="geometry" />
+        </mxCell>
+        <mxCell id="102" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" value="Instructor" vertex="1">
+          <mxGeometry height="40" width="110" x="325" y="755" as="geometry" />
+        </mxCell>
+        <mxCell id="103" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" value="Ficha" vertex="1">
+          <mxGeometry height="40" width="100" x="455" y="755" as="geometry" />
+        </mxCell>
+        <mxCell id="104" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;" value="Horario" vertex="1">
+          <mxGeometry height="40" width="110" x="575" y="755" as="geometry" />
+        </mxCell>
+        <mxCell id="105" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;" value="Observación" vertex="1">
+          <mxGeometry height="40" width="120" x="705" y="755" as="geometry" />
+        </mxCell>
+        <mxCell id="106" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=11;" value="Disponibilidad" vertex="1">
+          <mxGeometry height="40" width="130" x="845" y="755" as="geometry" />
+        </mxCell>
+        <mxCell id="31" parent="1" style="text;html=1;align=center;fontSize=11;fontColor=#555555;" value="¿Cómo se comporta el sistema?" vertex="1">
+          <mxGeometry height="20" width="280" x="785" y="210" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
