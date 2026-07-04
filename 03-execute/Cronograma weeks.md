@@ -25,3 +25,5 @@
 - **powerpoint 5, documento word y mockup
 - **WeeK 14:** Implementar documentos de gestion de horarios, adaptarlos a nuestro proyecto
 -  **WeeK 15:** Trabajo Diagramas UML, .drawie y word
+- **Week 16:** Trabajo UML, USE CASE, Dagrama USE CASE y Diagrama de Clases
+-  **Subir Archivo o Donde hallan echo la actividad de Asistencia a clase SENA
