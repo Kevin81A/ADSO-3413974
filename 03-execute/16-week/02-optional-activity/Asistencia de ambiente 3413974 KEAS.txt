@@ -1,0 +1,82 @@
+Asistencia de ambiente 3413974
+
+Se necesita realizar una forma rápida y efectiva de registro de asistencia en el cual los instructores no se demoren en entrar a la pagina web y llamar y verificar asistencia individual de cada aprendiz dentro del ambiente.
+
+-La asistencia se realizara de forma de verificación a travez de un código QR el cual se creara aleatoramiente cada clase para evitar actos indebidos de parte de los aprendices que no asistan a clase, se generara un código x clase el cual estará habilitado x el tiempo de 5 minutos para que los aprendices asistentes escanen y verifiquen su check asistencia, donde al escanear el código y entrar a la plataforma de manera automática el nombre de el aparacera de manera online y guarde en una base de datos que el aprendis escaneo el QR y estuvo ese dia y los demás desde la implementación...
+
+Requisitos Funcionales:
+
+RF01. El sistema deberá permitir al instructor generar un código QR único para cada sesión de formación.
+RF02. El código QR deberá generarse de forma aleatoria para cada clase, evitando la reutilización de códigos anteriores.
+RF03. El sistema deberá habilitar el código QR durante un tiempo máximo de 5 minutos desde su generación.
+RF04. El sistema deberá impedir el registro de asistencia una vez expire el tiempo de validez del código QR.
+RF05. El aprendiz deberá autenticarse en la plataforma antes de registrar su asistencia mediante el código QR.
+RF06. Al escanear el código QR válido, el sistema deberá registrar automáticamente la asistencia del aprendiz.
+RF07. El sistema deberá almacenar en la base de datos la siguiente información del registro:
+Identificación del aprendiz.
+Nombre del aprendiz.
+Ficha de formación.
+Fecha.
+Hora del registro.
+Ambiente.
+Instructor.
+Estado de asistencia.
+RF08. El sistema deberá mostrar al instructor, en tiempo real, el listado de aprendices que han registrado su asistencia.
+RF09. El sistema deberá evitar que un aprendiz registre asistencia más de una vez en la misma sesión de formación.
+RF10. El sistema deberá generar un listado final de asistentes y ausentes al finalizar el tiempo de registro.
+RF11. El instructor podrá consultar el historial de asistencia de cualquier sesión de formación.
+RF12. El sistema deberá permitir exportar los registros de asistencia en formatos como PDF o Excel.
+
+
+Requisitos No Funcionales:
+
+RNF01. El sistema deberá responder al registro de asistencia en un tiempo máximo de 3 segundos.
+RNF02. El código QR deberá utilizar un identificador único y aleatorio para cada sesión, garantizando que no pueda reutilizarse.
+RNF03. Toda la comunicación entre el dispositivo del aprendiz y el sistema deberá realizarse mediante conexiones seguras (HTTPS).
+RNF04. El sistema deberá almacenar la información de asistencia de manera segura, preservando la integridad y confidencialidad de los datos.
+RNF05. La plataforma deberá estar disponible durante el horario de formación con una disponibilidad mínima del 99 %.
+RNF06. El sistema deberá ser compatible con los principales navegadores web y dispositivos móviles Android e iOS.
+RNF07. La interfaz deberá ser intuitiva y permitir que el registro de asistencia se complete en menos de 30 segundos por aprendiz.
+RNF08. El sistema deberá soportar el registro simultáneo de múltiples aprendices sin afectar el rendimiento.
+RNF09. El sistema deberá conservar un historial de registros de asistencia para consultas y auditorías.
+RNF10. El sistema deberá cumplir con las políticas de protección de datos personales vigentes, garantizando el tratamiento adecuado de la información de los aprendices.
+
+Use Case
+
+| Código   | Caso de Uso                          | Actor Principal       | Descripción                                                                                                         |
+| -------- | ------------------------------------ | --------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| **CU01** | Iniciar sesión                       | Instructor / Aprendiz | Permite que el usuario se autentique en la plataforma para acceder a las funcionalidades según su rol.              |
+| **CU02** | Generar código QR                    | Instructor            | El instructor genera un código QR único para la sesión de clase, con una vigencia de 5 minutos.                     |
+| **CU03** | Visualizar código QR                 | Instructor            | El sistema muestra el código QR generado para que los aprendices puedan escanearlo.                                 |
+| **CU04** | Escanear código QR                   | Aprendiz              | El aprendiz escanea el código QR desde su dispositivo para acceder al registro de asistencia.                       |
+| **CU05** | Registrar asistencia                 | Aprendiz              | El sistema valida el código QR y registra automáticamente la asistencia del aprendiz en la base de datos.           |
+| **CU06** | Validar código QR                    | Sistema               | El sistema verifica que el código QR sea válido, no haya expirado y corresponda a la sesión de clase activa.        |
+| **CU07** | Evitar registros duplicados          | Sistema               | El sistema comprueba que el aprendiz no haya registrado asistencia previamente en la misma sesión.                  |
+| **CU08** | Visualizar asistencia en tiempo real | Instructor            | El instructor consulta el listado de aprendices que han registrado su asistencia durante la clase.                  |
+| **CU09** | Cerrar registro de asistencia        | Sistema               | Una vez transcurridos los 5 minutos, el sistema deshabilita automáticamente el código QR e impide nuevos registros. |
+| **CU10** | Consultar historial de asistencia    | Instructor            | El instructor consulta los registros de asistencia de sesiones anteriores.                                          |
+| **CU11** | Exportar reporte de asistencia       | Instructor            | El sistema genera un reporte de asistencia en formatos como PDF o Excel.                                            |
+
+Diagrama
+
+             Instructor                    Sistema                    Aprendiz
+     |                            |                          |
+     | Inicia sesión              |                          |
+     |--------------------------->|                          |
+     |                            |                          |
+     | Genera QR                  |                          |
+     |--------------------------->|                          |
+     |                            |                          |
+     | Muestra QR                 |------------------------->|
+     |                            |                          |
+     |                            |       Escanea QR         |
+     |                            |<-------------------------|
+     |                            |                          |
+     |                            | Valida QR                |
+     |                            |------------------------->|
+     |                            |                          |
+     |                            | Registra asistencia      |
+     |                            |------------------------->|
+     |                            |                          |
+     | Consulta asistencia        |                          |
+     |<---------------------------|                          |--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
