@@ -27,5 +27,5 @@
 -  **WeeK 15:** Trabajo Diagramas UML, .drawie y word
 - **Week 16:** Trabajo UML, USE CASE, Dagrama USE CASE y Diagrama de Clases
 -  **Subir Archivo o Donde hallan echo la actividad de Asistencia a clase SENA
-- **Week 17:** Mockup de Asistencia Sena, plazo entrega 11/07/2026,
+- **Week 17:** Mockup de Asistencia Sena, plazo entrega 11/07/2026 que se dejo el 04/07/2026,se debe entregar, idea replanteada y mejorada de llamado de asistencia, mockup de la pagina replanteada de asistencia y x ultimo presentacion del link que envio
 - **Week 18:** 
