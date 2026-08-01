@@ -29,5 +29,5 @@
 -  **Subir Archivo o Donde hallan echo la actividad de Asistencia a clase SENA
 - **Week 17:** Mockup de Asistencia Sena, plazo entrega 11/07/2026 que se dejo el 04/07/2026,se debe entregar, idea replanteada y mejorada de llamado de asistencia, mockup de la pagina replanteada de asistencia y x ultimo presentacion del link que envio
 - **Week 18:** Se debe subir el .zip de el proyecto de Asistencia de ambiente el que era de tarea para presentar y el de identificar ya el software y ver que se puede anexar funciones nuevas en pocas palabras, Desing inversa.
-- **Week 19:** Se realizo socializacion de los MVP los cuales quedaron pendientes algunos para la semana 20.
+- **Week 19:** Se realizo socializacion de los MVP los cuales quedaron pendientes algunos, se dividio el grupo en 2; los de el ejercicio 1 el cuar se vasa en un aeropuerto y el ejercicio 2 el cual se vasa en una clinica venterinatria, las evidencias desarrolladas en clase porfavor subir a week 19.
 - **Week 20:** 
