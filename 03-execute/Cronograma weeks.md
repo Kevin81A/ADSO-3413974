@@ -32,3 +32,4 @@
 - **Week 19:** Se realizo socializacion de los MVP los cuales quedaron pendientes algunos.
 - **Week 20:** se dividio el grupo en 2; los de el ejercicio 1 el cuar se vasa en un aeropuerto y el ejercicio 2 el cual se vasa en una clinica venterinatria, las evidencias desarrolladas en clase porfavor subir a week 20.
 - **Week 21:** Relaizar MER que dejo jesus ariel, en la tarde se dejo como trabajo realizar una ingenieria inver a; https://code-sena.github.io/design-software-mockup/app/index.html#/ y hacer un .md de aquello.
+- **Week 22:** Subir todos los BPMN y archivos asociados a la tarea dejada.
