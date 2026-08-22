@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:zeebe="http://camunda.org/schema/zeebe/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:di_1="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_SENA_Mockups_Total" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="5.50.1" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.9.0">
+  <bpmn:process id="Process_SENA_Mockups" name="Proceso Completo Gestion Horarios SENA" isExecutable="true">
+    <bpmn:startEvent id="Start_Login" name="Inicio de Sesión">
+      <bpmn:outgoing>Flow_L1</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:userTask id="Task_IngresarCredenciales" name="Ingresar Credenciales Institucionales">
+      <bpmn:incoming>Flow_L1</bpmn:incoming>
+      <bpmn:outgoing>Flow_L2</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:exclusiveGateway id="Gateway_ValidaLogin" name="¿Credenciales Válidas?">
+      <bpmn:incoming>Flow_L2</bpmn:incoming>
+      <bpmn:incoming>Flow_RecuperarBack</bpmn:incoming>
+      <bpmn:outgoing>Flow_LoginNo</bpmn:outgoing>
+      <bpmn:outgoing>Flow_1mzgp98</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:userTask id="Task_RecuperarPass" name="Recuperar Contraseña por Correo">
+      <bpmn:incoming>Flow_LoginNo</bpmn:incoming>
+      <bpmn:outgoing>Flow_RecuperarBack</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:userTask id="Task_Dashboard" name="Visualizar Dashboard Inicio (Conflictos, Fichas y Borradores)">
+      <bpmn:incoming>Flow_1mzgp98</bpmn:incoming>
+      <bpmn:incoming>Flow_08b4nkz</bpmn:incoming>
+      <bpmn:outgoing>Flow_MenuNav</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:exclusiveGateway id="Gateway_MenuPrincipal" name="¿Qué módulo desea consultar o gestionar?">
+      <bpmn:incoming>Flow_MenuNav</bpmn:incoming>
+      <bpmn:incoming>Flow_BackFichas</bpmn:incoming>
+      <bpmn:outgoing>Flow_OpHorarios</bpmn:outgoing>
+      <bpmn:outgoing>Flow_OpDisponibilidad</bpmn:outgoing>
+      <bpmn:outgoing>Flow_OpFichas</bpmn:outgoing>
+      <bpmn:outgoing>Flow_OpConflictos</bpmn:outgoing>
+      <bpmn:outgoing>Flow_08b4nkz</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:userTask id="Task_ConsultarFichas" name="Consultar y Filtrar Fichas Activas / Programas">
+      <bpmn:incoming>Flow_OpFichas</bpmn:incoming>
+      <bpmn:outgoing>Flow_BackFichas</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:userTask id="Task_ConsultarDisponibilidad" name="Consultar Disponibilidad de Ambientes e Instructores">
+      <bpmn:incoming>Flow_OpDisponibilidad</bpmn:incoming>
+      <bpmn:outgoing>Flow_BackDispo</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:userTask id="Task_ResolverConflictos" name="Revisar y Resolver Conflictos Pendientes">
+      <bpmn:incoming>Flow_OpConflictos</bpmn:incoming>
+      <bpmn:outgoing>Flow_BackConf</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:userTask id="Task_GestionHorario" name="Crear / Continuar Edición de Horario (Ficha y Sesiones)">
+      <bpmn:incoming>Flow_OpHorarios</bpmn:incoming>
+      <bpmn:outgoing>Flow_H1</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:serviceTask id="Task_ValidarChoquesBackend" name="Validar Choques (Instructor / Ambiente)">
+      <bpmn:extensionElements>
+        <zeebe:taskDefinition type="validar-choques-sena" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_H1</bpmn:incoming>
+      <bpmn:outgoing>Flow_H2</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:exclusiveGateway id="Gateway_ChoquesValidos" name="¿Existen Conflictos o Choques?">
+      <bpmn:incoming>Flow_H2</bpmn:incoming>
+      <bpmn:outgoing>Flow_HayChoques</bpmn:outgoing>
+      <bpmn:outgoing>Flow_SinChoques</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:userTask id="Task_CorregirSesiones" name="Ajustar Sesiones con Errores o Alertas">
+      <bpmn:incoming>Flow_HayChoques</bpmn:incoming>
+      <bpmn:outgoing>Flow_RegresarValidacion</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:exclusiveGateway id="Gateway_AccionFinalHorario" name="¿Guardar Borrador o Publicar?">
+      <bpmn:incoming>Flow_SinChoques</bpmn:incoming>
+      <bpmn:outgoing>Flow_GuardarBorrador</bpmn:outgoing>
+      <bpmn:outgoing>Flow_PublicarHorario</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:endEvent id="End_Borrador" name="Horario Guardado en Borrador">
+      <bpmn:incoming>Flow_GuardarBorrador</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:endEvent id="End_Publicado" name="Horario Publicado Exitosamente">
+      <bpmn:incoming>Flow_PublicarHorario</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_L1" sourceRef="Start_Login" targetRef="Task_IngresarCredenciales" />
+    <bpmn:sequenceFlow id="Flow_L2" sourceRef="Task_IngresarCredenciales" targetRef="Gateway_ValidaLogin" />
+    <bpmn:sequenceFlow id="Flow_LoginNo" name="No" sourceRef="Gateway_ValidaLogin" targetRef="Task_RecuperarPass">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">=loginValido = false</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_RecuperarBack" sourceRef="Task_RecuperarPass" targetRef="Gateway_ValidaLogin" />
+    <bpmn:sequenceFlow id="Flow_MenuNav" sourceRef="Task_Dashboard" targetRef="Gateway_MenuPrincipal" />
+    <bpmn:sequenceFlow id="Flow_OpHorarios" name="Horarios / Sesiones" sourceRef="Gateway_MenuPrincipal" targetRef="Task_GestionHorario">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">=opcion = "horarios"</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_OpDisponibilidad" name="Disponibilidad" sourceRef="Gateway_MenuPrincipal" targetRef="Task_ConsultarDisponibilidad">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">=opcion = "disponibilidad"</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_OpFichas" name="Fichas" sourceRef="Gateway_MenuPrincipal" targetRef="Task_ConsultarFichas">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">=opcion = "fichas"</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_OpConflictos" name="Conflictos / Alertas" sourceRef="Gateway_MenuPrincipal" targetRef="Task_ResolverConflictos">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">=opcion = "conflictos"</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_BackFichas" sourceRef="Task_ConsultarFichas" targetRef="Gateway_MenuPrincipal" />
+    <bpmn:sequenceFlow id="Flow_BackDispo" sourceRef="Task_ConsultarDisponibilidad" targetRef="Task_Dashboard" />
+    <bpmn:sequenceFlow id="Flow_BackConf" sourceRef="Task_ResolverConflictos" targetRef="Task_Dashboard" />
+    <bpmn:sequenceFlow id="Flow_H1" sourceRef="Task_GestionHorario" targetRef="Task_ValidarChoquesBackend" />
+    <bpmn:sequenceFlow id="Flow_H2" sourceRef="Task_ValidarChoquesBackend" targetRef="Gateway_ChoquesValidos" />
+    <bpmn:sequenceFlow id="Flow_HayChoques" name="Sí (Conflictos)" sourceRef="Gateway_ChoquesValidos" targetRef="Task_CorregirSesiones">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">=tieneChoques = true</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_SinChoques" name="No (Limpio)" sourceRef="Gateway_ChoquesValidos" targetRef="Gateway_AccionFinalHorario">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">=tieneChoques = false</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_RegresarValidacion" sourceRef="Task_CorregirSesiones" targetRef="Task_ValidarChoquesBackend" />
+    <bpmn:sequenceFlow id="Flow_GuardarBorrador" name="Guardar Borrador" sourceRef="Gateway_AccionFinalHorario" targetRef="End_Borrador">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">=accionFinal = "borrador"</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_PublicarHorario" name="Publicar" sourceRef="Gateway_AccionFinalHorario" targetRef="End_Publicado">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">=accionFinal = "publicar"</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_1mzgp98" name="si" sourceRef="Gateway_ValidaLogin" targetRef="Task_Dashboard" />
+    <bpmn:sequenceFlow id="Flow_08b4nkz" sourceRef="Gateway_MenuPrincipal" targetRef="Task_Dashboard" />
+  </bpmn:process>
+  <di:BPMNDiagram id="BPMNDiagram_1">
+    <di:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_SENA_Mockups">
+      <di:BPMNShape id="Start_Login_di" bpmnElement="Start_Login">
+        <dc:Bounds x="172" y="322" width="36" height="36" />
+        <di:BPMNLabel>
+          <dc:Bounds x="151" y="358" width="78" height="14" />
+        </di:BPMNLabel>
+      </di:BPMNShape>
+      <di:BPMNShape id="Task_IngresarCredenciales_di" bpmnElement="Task_IngresarCredenciales">
+        <dc:Bounds x="370" y="300" width="100" height="80" />
+      </di:BPMNShape>
+      <di:BPMNShape id="Task_RecuperarPass_di" bpmnElement="Task_RecuperarPass">
+        <dc:Bounds x="490" y="520" width="100" height="80" />
+      </di:BPMNShape>
+      <di:BPMNShape id="Task_Dashboard_di" bpmnElement="Task_Dashboard">
+        <dc:Bounds x="610" y="300" width="100" height="80" />
+      </di:BPMNShape>
+      <di:BPMNShape id="Gateway_ValidaLogin_di" bpmnElement="Gateway_ValidaLogin" isMarkerVisible="true">
+        <dc:Bounds x="515" y="315" width="50" height="50" />
+        <di:BPMNLabel>
+          <dc:Bounds x="504.5" y="277.5" width="71" height="27" />
+        </di:BPMNLabel>
+      </di:BPMNShape>
+      <di:BPMNShape id="Gateway_MenuPrincipal_di" bpmnElement="Gateway_MenuPrincipal" isMarkerVisible="true">
+        <dc:Bounds x="780" y="315" width="50" height="50" />
+        <di:BPMNLabel>
+          <dc:Bounds x="761" y="265" width="87" height="40" />
+        </di:BPMNLabel>
+      </di:BPMNShape>
+      <di:BPMNShape id="Task_ConsultarDisponibilidad_di" bpmnElement="Task_ConsultarDisponibilidad">
+        <dc:Bounds x="1010" y="300" width="100" height="80" />
+      </di:BPMNShape>
+      <di:BPMNShape id="Task_GestionHorario_di" bpmnElement="Task_GestionHorario">
+        <dc:Bounds x="860" y="620" width="100" height="80" />
+      </di:BPMNShape>
+      <di:BPMNShape id="Task_ValidarChoquesBackend_di" bpmnElement="Task_ValidarChoquesBackend">
+        <dc:Bounds x="1030" y="550" width="100" height="80" />
+      </di:BPMNShape>
+      <di:BPMNShape id="Gateway_ChoquesValidos_di" bpmnElement="Gateway_ChoquesValidos" isMarkerVisible="true">
+        <dc:Bounds x="1185" y="565" width="50" height="50" />
+        <di:BPMNLabel>
+          <dc:Bounds x="1181" y="515" width="58" height="40" />
+        </di:BPMNLabel>
+      </di:BPMNShape>
+      <di:BPMNShape id="Gateway_AccionFinalHorario_di" bpmnElement="Gateway_AccionFinalHorario" isMarkerVisible="true">
+        <dc:Bounds x="1295" y="565" width="50" height="50" />
+        <di:BPMNLabel>
+          <dc:Bounds x="1294" y="515" width="52" height="40" />
+        </di:BPMNLabel>
+      </di:BPMNShape>
+      <di:BPMNShape id="End_Borrador_di" bpmnElement="End_Borrador">
+        <dc:Bounds x="1482" y="572" width="36" height="36" />
+        <di:BPMNLabel>
+          <dc:Bounds x="1456" y="608" width="89" height="27" />
+        </di:BPMNLabel>
+      </di:BPMNShape>
+      <di:BPMNShape id="End_Publicado_di" bpmnElement="End_Publicado">
+        <dc:Bounds x="1492" y="682" width="36" height="36" />
+        <di:BPMNLabel>
+          <dc:Bounds x="1466" y="718" width="88" height="27" />
+        </di:BPMNLabel>
+      </di:BPMNShape>
+      <di:BPMNShape id="Task_CorregirSesiones_di" bpmnElement="Task_CorregirSesiones">
+        <dc:Bounds x="1160" y="680" width="100" height="80" />
+      </di:BPMNShape>
+      <di:BPMNShape id="Task_ResolverConflictos_di" bpmnElement="Task_ResolverConflictos">
+        <dc:Bounds x="1010" y="80" width="100" height="80" />
+      </di:BPMNShape>
+      <di:BPMNShape id="Task_ConsultarFichas_di" bpmnElement="Task_ConsultarFichas">
+        <dc:Bounds x="1010" y="200" width="100" height="80" />
+      </di:BPMNShape>
+      <di:BPMNEdge id="Flow_L1_di" bpmnElement="Flow_L1">
+        <di_1:waypoint x="208" y="340" />
+        <di_1:waypoint x="370" y="340" />
+      </di:BPMNEdge>
+      <di:BPMNEdge id="Flow_L2_di" bpmnElement="Flow_L2">
+        <di_1:waypoint x="470" y="340" />
+        <di_1:waypoint x="515" y="340" />
+      </di:BPMNEdge>
+      <di:BPMNEdge id="Flow_LoginNo_di" bpmnElement="Flow_LoginNo">
+        <di_1:waypoint x="540" y="365" />
+        <di_1:waypoint x="540" y="520" />
+        <di:BPMNLabel>
+          <dc:Bounds x="548" y="432" width="15" height="14" />
+        </di:BPMNLabel>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="Flow_RecuperarBack_di" bpmnElement="Flow_RecuperarBack">
+        <di_1:waypoint x="540" y="520" />
+        <di_1:waypoint x="540" y="365" />
+      </di:BPMNEdge>
+      <di:BPMNEdge id="Flow_MenuNav_di" bpmnElement="Flow_MenuNav">
+        <di_1:waypoint x="710" y="340" />
+        <di_1:waypoint x="780" y="340" />
+      </di:BPMNEdge>
+      <di:BPMNEdge id="Flow_OpHorarios_di" bpmnElement="Flow_OpHorarios">
+        <di_1:waypoint x="805" y="365" />
+        <di_1:waypoint x="805" y="660" />
+        <di_1:waypoint x="860" y="660" />
+        <di:BPMNLabel>
+          <dc:Bounds x="787" y="488" width="48" height="27" />
+        </di:BPMNLabel>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="Flow_OpDisponibilidad_di" bpmnElement="Flow_OpDisponibilidad">
+        <di_1:waypoint x="830" y="340" />
+        <di_1:waypoint x="1010" y="340" />
+        <di:BPMNLabel>
+          <dc:Bounds x="941" y="322" width="69" height="14" />
+        </di:BPMNLabel>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="Flow_OpFichas_di" bpmnElement="Flow_OpFichas">
+        <di_1:waypoint x="805" y="315" />
+        <di_1:waypoint x="805" y="240" />
+        <di_1:waypoint x="1010" y="240" />
+        <di:BPMNLabel>
+          <dc:Bounds x="905" y="221" width="33" height="14" />
+        </di:BPMNLabel>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="Flow_OpConflictos_di" bpmnElement="Flow_OpConflictos">
+        <di_1:waypoint x="805" y="315" />
+        <di_1:waypoint x="805" y="120" />
+        <di_1:waypoint x="1010" y="120" />
+        <di:BPMNLabel>
+          <dc:Bounds x="767" y="210" width="55" height="27" />
+        </di:BPMNLabel>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="Flow_BackFichas_di" bpmnElement="Flow_BackFichas">
+        <di_1:waypoint x="1010" y="240" />
+        <di_1:waypoint x="805" y="240" />
+        <di_1:waypoint x="805" y="315" />
+      </di:BPMNEdge>
+      <di:BPMNEdge id="Flow_BackDispo_di" bpmnElement="Flow_BackDispo">
+        <di_1:waypoint x="1010" y="340" />
+        <di_1:waypoint x="710" y="340" />
+      </di:BPMNEdge>
+      <di:BPMNEdge id="Flow_BackConf_di" bpmnElement="Flow_BackConf">
+        <di_1:waypoint x="1010" y="120" />
+        <di_1:waypoint x="805" y="120" />
+        <di_1:waypoint x="805" y="340" />
+        <di_1:waypoint x="710" y="340" />
+      </di:BPMNEdge>
+      <di:BPMNEdge id="Flow_H1_di" bpmnElement="Flow_H1">
+        <di_1:waypoint x="960" y="660" />
+        <di_1:waypoint x="995" y="660" />
+        <di_1:waypoint x="995" y="590" />
+        <di_1:waypoint x="1030" y="590" />
+      </di:BPMNEdge>
+      <di:BPMNEdge id="Flow_H2_di" bpmnElement="Flow_H2">
+        <di_1:waypoint x="1130" y="590" />
+        <di_1:waypoint x="1185" y="590" />
+      </di:BPMNEdge>
+      <di:BPMNEdge id="Flow_HayChoques_di" bpmnElement="Flow_HayChoques">
+        <di_1:waypoint x="1210" y="615" />
+        <di_1:waypoint x="1210" y="680" />
+        <di:BPMNLabel>
+          <dc:Bounds x="1160" y="648" width="70" height="14" />
+        </di:BPMNLabel>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="Flow_SinChoques_di" bpmnElement="Flow_SinChoques">
+        <di_1:waypoint x="1235" y="590" />
+        <di_1:waypoint x="1295" y="590" />
+        <di:BPMNLabel>
+          <dc:Bounds x="1237" y="565" width="57" height="14" />
+        </di:BPMNLabel>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="Flow_RegresarValidacion_di" bpmnElement="Flow_RegresarValidacion">
+        <di_1:waypoint x="1160" y="720" />
+        <di_1:waypoint x="1080" y="720" />
+        <di_1:waypoint x="1080" y="630" />
+      </di:BPMNEdge>
+      <di:BPMNEdge id="Flow_GuardarBorrador_di" bpmnElement="Flow_GuardarBorrador">
+        <di_1:waypoint x="1345" y="590" />
+        <di_1:waypoint x="1482" y="590" />
+        <di:BPMNLabel>
+          <dc:Bounds x="1381" y="567" width="87" height="14" />
+        </di:BPMNLabel>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="Flow_PublicarHorario_di" bpmnElement="Flow_PublicarHorario">
+        <di_1:waypoint x="1320" y="615" />
+        <di_1:waypoint x="1320" y="700" />
+        <di_1:waypoint x="1492" y="700" />
+        <di:BPMNLabel>
+          <dc:Bounds x="1317" y="645" width="40" height="14" />
+        </di:BPMNLabel>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="Flow_1mzgp98_di" bpmnElement="Flow_1mzgp98">
+        <di_1:waypoint x="565" y="340" />
+        <di_1:waypoint x="610" y="340" />
+        <di:BPMNLabel>
+          <dc:Bounds x="584" y="322" width="8" height="14" />
+        </di:BPMNLabel>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="Flow_08b4nkz_di" bpmnElement="Flow_08b4nkz">
+        <di_1:waypoint x="780" y="340" />
+        <di_1:waypoint x="710" y="340" />
+      </di:BPMNEdge>
+    </di:BPMNPlane>
+  </di:BPMNDiagram>
+</bpmn:definitions>
