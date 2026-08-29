@@ -1,0 +1,180 @@
+Ingeniería inversa: apuntes
+
+Hacer un Plan de contingencia(Personas con discapacidad o casos específicos como no tener un celular)
+
+Solución de repetición en nombres y asistencias
+
+Leyes y tiempo en el que se borraran los datos del aprendiz
+
+En la pagina actualmente no se puede borrar una ficha creada
+
+En los datos del aprendiz "Tipo de documento" ninguno tiene las adecuadas restricciones
+
+
+Plan de contingencia
+
+Claro. Aquí tienes un **Plan de Contingencia** más formal, estructurado y adecuado para incluir en la documentación de tu proyecto.
+
+---
+
+# Plan de Contingencia
+
+## 1. Propósito
+
+El presente Plan de Contingencia establece las acciones que deben seguirse cuando se presenten situaciones excepcionales que impidan el correcto funcionamiento del sistema de toma de asistencia. Su finalidad es garantizar que todos los aprendices puedan registrar su asistencia, asegurando la continuidad del proceso sin afectar el desarrollo normal de la jornada de formación.
+
+---
+
+## 2. Casos de contingencia
+
+### Caso 1. Aprendiz sin dispositivo móvil
+
+**Situación:**
+El aprendiz no dispone de un teléfono celular para escanear el código QR.
+
+**Acción de contingencia:**
+El instructor registrará manualmente la asistencia desde el panel administrativo del sistema.
+
+---
+
+### Caso 2. Aprendiz con discapacidad visual
+
+**Situación:**
+El aprendiz presenta una discapacidad visual que dificulta el uso del sistema.
+
+**Acción de contingencia:**
+El instructor brindará apoyo durante el registro o realizará el registro manual cuando sea necesario.
+
+---
+
+### Caso 3. Aprendiz con discapacidad auditiva
+
+**Situación:**
+El aprendiz presenta discapacidad auditiva.
+
+**Acción de contingencia:**
+El sistema utilizará mensajes visuales claros y el instructor brindará apoyo si el aprendiz lo requiere.
+
+---
+
+### Caso 4. Aprendiz con discapacidad motriz
+
+**Situación:**
+El aprendiz presenta dificultades para manipular el dispositivo móvil.
+
+**Acción de contingencia:**
+El instructor realizará el registro manual de la asistencia.
+
+---
+
+### Caso 5. Falla del código QR
+
+**Situación:**
+El código QR no se genera correctamente o no puede ser leído.
+
+**Acción de contingencia:**
+El instructor generará un nuevo código QR. Si el problema continúa, utilizará el registro manual.
+
+---
+
+### Caso 6. Código de verificación incorrecto o vencido
+
+**Situación:**
+El código de verificación ingresado por el aprendiz no coincide o ha expirado.
+
+**Acción de contingencia:**
+El sistema generará un nuevo código y el aprendiz deberá ingresarlo nuevamente.
+
+---
+
+### Caso 7. Falta de conexión a Internet
+
+**Situación:**
+No existe conexión a Internet durante el proceso de asistencia.
+
+**Acción de contingencia:**
+El instructor registrará temporalmente la asistencia de forma manual y posteriormente actualizará la información en el sistema cuando se restablezca la conexión.
+
+---
+
+### Caso 8. Aprendiz no registrado
+
+**Situación:**
+El aprendiz no existe en la base de datos del sistema.
+
+**Acción de contingencia:**
+El sistema solicitará:
+
+* Nombre completo.
+* Tipo de documento.
+* Número de documento.
+
+Posteriormente registrará al aprendiz y almacenará automáticamente su asistencia.
+
+---
+
+### Caso 9. Registro duplicado
+
+**Situación:**
+El aprendiz intenta registrar nuevamente su asistencia durante la misma jornada.
+
+**Acción de contingencia:**
+El sistema bloqueará el nuevo registro y mostrará un mensaje indicando que la asistencia ya fue registrada.
+
+---
+
+## 3. Responsables
+
+### Instructor
+
+* Iniciar la jornada de asistencia.
+* Activar las medidas de contingencia cuando sea necesario.
+* Registrar manualmente la asistencia en casos excepcionales.
+* Verificar que todos los aprendices queden registrados.
+
+### Aprendiz
+
+* Registrar su asistencia utilizando el QR y el código de verificación.
+* Informar oportunamente cualquier inconveniente técnico o personal que impida el registro.
+
+### Sistema
+
+* Generar correctamente el código QR y el código de verificación.
+* Validar la identidad del aprendiz.
+* Evitar registros duplicados.
+* Almacenar la información de manera segura.
+* Mostrar mensajes claros ante cualquier error.
+
+---
+
+## 4. Flujo de contingencia
+
+```text
+Inicio de la jornada
+          │
+          ▼
+¿El aprendiz puede registrar su asistencia?
+          │
+     ┌────┴────┐
+     │         │
+    Sí         No
+     │         │
+     ▼         ▼
+Registrar   Identificar el
+asistencia  tipo de contingencia
+                 │
+                 ▼
+Aplicar la solución correspondiente
+                 │
+                 ▼
+Registrar la asistencia
+                 │
+                 ▼
+Finalizar proceso
+```
+
+---
+
+## 5. Objetivo del plan
+
+Garantizar que el proceso de toma de asistencia continúe funcionando aun cuando se presenten situaciones excepcionales, asegurando que ningún aprendiz quede sin registrar su asistencia por problemas técnicos, falta de dispositivos o condiciones particulares, y manteniendo la integridad y confiabilidad de la información almacenada en el sistema.
