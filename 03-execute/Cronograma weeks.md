@@ -35,3 +35,4 @@
 - **Week 22:** Subir todos los BPMN y archivos asociados a la tarea dejada.
 - **Week 23:** se realizo estrategia de pensamiento de conocimientos, ingieneria inversa, plan de contingencia y de gestion de horarios.
 - **Week 24:** Se debe subir trabajo de governanza y realizacion de proyecto de Taller de mecanica que dejo jesus ariel el 12 de septiembre.
+- **Week 25:** 17-10-2026 se debe realizar la devida subida de documentacion generada el dia de hoy de acuerdo al trabajo entregado del instructor, todo archivo o evidencia generada que cuente como evidencia para esta semana
