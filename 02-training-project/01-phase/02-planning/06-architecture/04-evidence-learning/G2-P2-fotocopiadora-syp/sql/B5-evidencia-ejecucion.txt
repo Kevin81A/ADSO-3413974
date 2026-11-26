@@ -1,0 +1,20 @@
+Evidencia de ejecución · SQLite 3.49.1 (módulo sqlite3 de Python)
+Fecha: 2026-11-26 14:02
+Base: en memoria (:memory:)
+
+1) B5-crear-modelo.sql ejecutado SIN ERRORES.
+   Tablas creadas (18): carrito, categoria, ciudad, compatibilidad_producto, cotizacion, detalle_cotizacion, detalle_pedido, informacion_empresa, item_carrito, mensaje_contacto, pago, pedido, producto, red_social, reporte_contador, solicitud_servicio, usuario, variante_producto
+   Llaves foráneas declaradas: 20
+   Vista: v_total_pedido · Índices: ix_producto_categoria, ix_pedido_usuario, ix_solicitud_estado
+2) B5-datos-prueba.sql ejecutado SIN ERRORES.
+   v_total_pedido → [('SYP-2026-00001', 180000, 34200.0, 214200.0)]
+   PRAGMA integrity_check → ok
+   PRAGMA foreign_key_check → []
+3) Pruebas negativas (deben FALLAR para demostrar las restricciones):
+   [rechazado OK] CHECK precio > 0: CHECK constraint failed: ck_producto_precio
+   [rechazado OK] CHECK rol: CHECK constraint failed: ck_usuario_rol
+   [rechazado OK] UNIQUE correo: UNIQUE constraint failed: usuario.correo
+   [rechazado OK] FK producto→categoria: FOREIGN KEY constraint failed
+   [rechazado OK] ON DELETE RESTRICT (producto vendido): FOREIGN KEY constraint failed
+   [rechazado OK] CHECK cantidad > 0: CHECK constraint failed: ck_detalle_pedido_cantidad
+   [rechazado OK] CHECK id_info = 1: CHECK constraint failed: ck_informacion_empresa_id_info
