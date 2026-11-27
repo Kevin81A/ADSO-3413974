@@ -42,6 +42,8 @@ Diagrama: [`diagramas/A6-despliegue.drawio`](diagramas/A6-despliegue.drawio) · 
 
 ![Despliegue](diagramas/A6-despliegue.png)
 
+> Nota (ajuste del día 2): este es el despliegue **objetivo** del diseño. Hoy el sitio en producción en Render es un sitio estático (solo HTML, CSS, JS e imágenes) y el backend FastAPI todavía no está publicado. El servidor de aplicación, el nodo de datos y el respaldo diario de esta vista son la propuesta para cuando se publique.
+
 | Nodo | Artefactos que aloja | Conexión (protocolo y puerto) | Decisión que responde a un RNF |
 |---|---|---|---|
 | Dispositivo del cliente | Páginas HTML, JS, CSS, `sw.js`, `manifest.json` | HTTPS TCP 443 (TLS 1.2+) hacia el servidor de aplicación | RNF-05: datos personales cifrados en tránsito; RNF-03: caché del service worker |
