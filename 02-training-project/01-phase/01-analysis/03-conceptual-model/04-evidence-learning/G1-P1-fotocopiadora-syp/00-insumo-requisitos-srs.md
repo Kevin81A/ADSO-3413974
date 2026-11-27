@@ -4,6 +4,8 @@ Fuente: SRS v2.0 del proyecto de equipo *Fotocopiadoras SyP* (`docs/Spain/SRS_Fo
 
 Ajuste propio (G1): al verificar el SRS contra el sistema que ya construimos encontré dos funciones que existen en el producto y **no estaban en el SRS v2.0** (cotizaciones y reporte de contadores de renting). Las agregué como **RF-12** y **RF-13** (SRS v2.1). Ver el registro de ajustes del producto 2 (hallazgo H-01).
 
+> **Qué SRS se usó y equivalencia de números (ajuste del día 2).** Este catálogo parte del **SRS inicial en texto** del equipo (`docs/Spain/SRS_Fotocopiadoras_SyP.md`), no del SRS formal en Word (`docs/Spain/01_SRS_Fotocopiadoras_SyP.docx`, v2.0). Los dos numeran distinto: en el Word las cotizaciones ya son **RF-04** y los contadores de renting **RF-08**, y allí RF-12 y RF-13 son otros requisitos (asignación de solicitudes técnicas y notificaciones). Por eso «el SRS v2.0 no las tenía» se refiere solo al SRS en texto. Equivalencias principales (este catálogo → Word): RF-02/RF-03 → RF-01/RF-02 (catálogo y ficha) · RF-04 → RF-03 (carrito) · RF-12 → RF-04 (cotizaciones) · RF-05 → RF-05 (checkout) · RF-06 → RF-06 (cuentas) · RF-09 → RF-07 (servicio técnico) · RF-13 → RF-08 (contadores) · RF-10.7 → RF-09 (analítica) · RF-10.2 → RF-10 (productos) · RF-10.4 → RF-11 (pedidos) · RF-10.5 → RF-12 (solicitudes) · RF-08.5 → RF-15 (contacto). Hallazgo H-07 del registro de ajustes.
+
 ## Requisitos funcionales (42 ítems trazables)
 
 | ID | Requisito (texto corto) |
