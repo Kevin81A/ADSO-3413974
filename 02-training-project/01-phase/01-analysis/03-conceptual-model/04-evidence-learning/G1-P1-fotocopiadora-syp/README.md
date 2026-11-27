@@ -27,6 +27,7 @@ Mi carpeta `03-execute` no tiene artefactos de este caso: el trabajo del proyect
 | 3 | Diagrama de casos de uso | Quité **detalle técnico** («JWT», «PSE, Bancolombia, Nequi») y separé «Gestión de Cuenta y JWT» en CU-09, CU-10 y CU-11. Mejora C4. | [ce72748](https://github.com/Kevin81A/ADSO-3413974/commit/ce72748) |
 | 4 | SRS (catálogo de requisitos) | Agregué **RF-12 y RF-13** porque dos casos del diagrama no tenían requisito; separé funcionales de no funcionales. Mejora C3. | [ce72748](https://github.com/Kevin81A/ADSO-3413974/commit/ce72748) |
 | 5 | Diagrama de casos de uso | Agregué casos que el SRS pedía y faltaban (CU-12, CU-13, CU-14, CU-22). Mejora C3 (cobertura 97,6 %). | [ce72748](https://github.com/Kevin81A/ADSO-3413974/commit/ce72748) |
+| 6 | Catálogo de requisitos | (Día 2) Aclaré que el catálogo parte del SRS en texto y agregué la **equivalencia de números** con el SRS formal en Word, donde RF-12 y RF-13 significan otra cosa. Mejora C3 (trazabilidad sin ambigüedad). | [621d2ba](https://github.com/Kevin81A/ADSO-3413974/commit/621d2ba) |
 
 ## 4. Qué construí nuevo
 

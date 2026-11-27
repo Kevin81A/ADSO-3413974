@@ -26,6 +26,7 @@
 | 2 | MER y dominio | Agregué CARRITO, ITEM_CARRITO e INFORMACION_EMPRESA y el atributo ficha técnica para que los RF de carrito, ficha técnica y páginas institucionales lleguen hasta entidad. Mejora C8. | [ebdce1a](https://github.com/Kevin81A/ADSO-3413974/commit/ebdce1a) |
 | 3 | Dominio | Pasé de tablas con claves y tipos a **17 clases conceptuales** sin métodos ni FK, con generalización de Usuario y la clase de asociación LíneaPedido. Mejora C3. | [ebdce1a](https://github.com/Kevin81A/ADSO-3413974/commit/ebdce1a) |
 | 4 | Prototipo | Redibujé 3 páginas reales como bocetos rotulados con su caso de uso y con los mensajes de los flujos alternos. Mejora C5. | [ebdce1a](https://github.com/Kevin81A/ADSO-3413974/commit/ebdce1a) |
+| 5 | Registro de ajustes | (Día 2) Registré el hallazgo **H-07** (numeración ambigua entre los dos SRS) y la revisión del día 2: 19 de 19 criterios siguen cumpliendo. | [78b289c](https://github.com/Kevin81A/ADSO-3413974/commit/78b289c) |
 
 ## 4. Qué construí nuevo
 

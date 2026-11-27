@@ -56,7 +56,7 @@
 | Día | Qué avancé (mensaje del commit) |
 |---|---|
 | 2026-11-26 | «G2-P1: ficha, diagrama de clases con patrones, arquitectura, componentes, despliegue y matriz» |
-| (segundo día) | (anotar el commit del segundo día) |
+| 2026-11-27 | «G2-P1 (día 2): A4 lista los 9 routers (faltaba notifications) y A6 aclara que es el despliegue objetivo» · [ec8ce76](https://github.com/Kevin81A/ADSO-3413974/commit/ec8ce76) |
 
 ## 6. Uso de inteligencia artificial (declaración obligatoria)
 

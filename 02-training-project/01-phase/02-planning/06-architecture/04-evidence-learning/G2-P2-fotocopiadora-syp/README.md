@@ -55,7 +55,7 @@
 | Día | Qué avancé (mensaje del commit) |
 |---|---|
 | 2026-11-26 | «G2-P2: modelo conceptual y lógico, normalización, diccionario, script SQL con evidencia, seguridad y lista de chequeo» |
-| (segundo día) | (anotar el commit del segundo día) |
+| 2026-11-27 | «G2-P2 (día 2): B2 distingue el modelo propuesto (18 tablas) de la base actual (9 tablas) y B6 marca el respaldo como propuesta» · [1ff535b](https://github.com/Kevin81A/ADSO-3413974/commit/1ff535b) |
 
 ## 6. Uso de inteligencia artificial (declaración obligatoria)
 
