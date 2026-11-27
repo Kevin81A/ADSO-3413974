@@ -4,6 +4,8 @@
 
 > El modelo conceptual tiene 17 entidades y el lógico 18 tablas: la N:M recursiva «es compatible con» se convierte en la tabla `compatibilidad_producto`, y la entidad USUARIO absorbe la generalización Cliente / Administrador / Técnico (columna `rol`).
 
+> **Propuesta frente a lo implementado (ajuste del día 2).** Estas 18 tablas son el modelo **propuesto** y normalizado. La base que usa hoy el sistema del equipo (`fastapi_backend/database.py`) tiene **9 tablas** con nombres en inglés (`users`, `categories`, `products`, `maintenance_requests`, `contact_messages`, `quotes`, `counter_reports`, `orders`, `notifications`) y guarda los productos de cada pedido y cotización como texto JSON (`items_json`). Pasar a este modelo es trabajo futuro; [B3](B3-normalizacion.md) explica por qué conviene (el `items_json` incumple la 1FN).
+
 ## Diagrama lógico (Mermaid · GitHub lo dibuja)
 
 ```mermaid
